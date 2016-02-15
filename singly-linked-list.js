@@ -8,6 +8,7 @@ function SinglyLinkedList() {
   this.tail = null;
   this.numberOfValues = 0;
 }
+
 SinglyLinkedList.prototype.add = function(data) {
   var node = new Node(data);
   if(!this.head) {
@@ -38,10 +39,10 @@ SinglyLinkedList.prototype.remove = function(data) {
     current = current.next;
   }
 };
-SinglyLinkedList.prototype.insertAfter = function(data, nodeData) {
+SinglyLinkedList.prototype.insertAfter = function(data, toNodeData) {
   var current = this.head;
   while(current) {
-    if(current.data === nodeData) {
+    if(current.data === toNodeData) {
       var node = new Node(data);
       if(current === this.tail) {
         this.tail.next = node;

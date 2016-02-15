@@ -9,6 +9,7 @@ function DoublyLinkedList() {
   this.tail = null;
   this.numberOfValues = 0;
 }
+
 DoublyLinkedList.prototype.add = function (data) {
   var node = new Node(data);
   if(!this.head) {
@@ -40,10 +41,10 @@ DoublyLinkedList.prototype.remove = function(data) {
     current = current.next;
   }
 };
-DoublyLinkedList.prototype.insertAfter = function(data, nodeData) {
+DoublyLinkedList.prototype.insertAfter = function(data, toNodeData) {
   var current = this.head;
   while(current) {
-    if(current.data === nodeData) {
+    if(current.data === toNodeData) {
       var node = new Node(data);
       if(current === this.tail) {
         this.add(data);

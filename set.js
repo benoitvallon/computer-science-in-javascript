@@ -83,13 +83,13 @@ var set2 = new Set();
 set2.add(2);
 set2.add(3);
 var set3 = set2.union(set1);
-set3.print() // => 1 2 3
+set3.print(); // => 1 2 3
 var set4 = set2.intersect(set1);
-set4.print() // => 2
+set4.print(); // => 2
 var set5 = set.difference(set3); // 1 2 4 diff 1 2 3
-set5.print() // => 4
+set5.print(); // => 4
 var set6 = set3.difference(set); // 1 2 3 diff 1 2 4
-set6.print() // => 3
+set6.print(); // => 3
 console.log('set1 subset of set is true:', set.isSubset(set1)); // => true
 console.log('set2 subset of set is false:', set.isSubset(set2)); // => false
 console.log('set1 length gives 2:', set1.length()); // => 2
