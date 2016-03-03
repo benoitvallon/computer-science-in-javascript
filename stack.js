@@ -1,24 +1,18 @@
 function Stack() {
   this.stack = [];
-  this.numberOfValues = 0;
 }
 
 Stack.prototype.push = function(value) {
   this.stack.push(value);
-  this.numberOfValues++;
 };
 Stack.prototype.pop = function() {
-  var value = this.stack.pop();
-  if(value) {
-    this.numberOfValues--;
-  }
-  return value;
+  return this.stack.pop();
 };
 Stack.prototype.peek = function() {
   return this.stack[this.stack.length - 1];
 };
 Stack.prototype.length = function() {
-  return this.numberOfValues;
+  return this.stack.length;
 };
 Stack.prototype.print = function() {
   console.log(this.stack.reduce(function(prev, curr) {
