@@ -24,9 +24,7 @@ MyArray.prototype.length = function() {
   return this.array.length;
 };
 MyArray.prototype.print = function() {
-  console.log(this.array.reduce(function(prev, curr) {
-    return prev + curr + ' ';
-  }, '').trim());
+  console.log(this.array.join(' '));
 };
 
 var array = new MyArray();

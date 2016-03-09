@@ -60,9 +60,7 @@ Set.prototype.length = function() {
   return this.numberOfValues;
 };
 Set.prototype.print = function() {
-  console.log(this.values.reduce(function(prev, curr) {
-    return prev + curr + ' ';
-  }, '').trim());
+  console.log(this.values.join(' '));
 };
 
 var set = new Set();

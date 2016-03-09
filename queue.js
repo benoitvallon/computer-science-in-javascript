@@ -15,9 +15,7 @@ Queue.prototype.length = function() {
   return this.queue.length;
 };
 Queue.prototype.print = function() {
-  console.log(this.queue.reduce(function(prev, curr) {
-    return prev + curr + ' ';
-  }, '').trim());
+  console.log(this.queue.join(' '));
 };
 
 var queue = new Queue();

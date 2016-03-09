@@ -15,9 +15,7 @@ Stack.prototype.length = function() {
   return this.stack.length;
 };
 Stack.prototype.print = function() {
-  console.log(this.stack.reduce(function(prev, curr) {
-    return prev + curr + ' ';
-  }, '').trim());
+  console.log(this.stack.join(' '));
 };
 
 var stack = new Stack();
