@@ -74,7 +74,7 @@ set.print(); // => 1 2 3 4
 set.remove(3);
 set.print(); // => 1 2 4
 console.log('contains 4 is true:', set.contains(4)); // => true
-console.log('contains 4 is false:', set.contains(3)); // => false
+console.log('contains 3 is false:', set.contains(3)); // => false
 console.log('---');
 var set1 = new Set();
 set1.add(1);
