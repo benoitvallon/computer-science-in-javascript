@@ -15,11 +15,9 @@ Tree.prototype.add = function(data, toNodeData) {
   } else {
     if(!this.root) {
       this.root = node;
-      return;
     } else {
-      return 'Error: root node is already assigned';
+      return 'Root node is already assigned';
     }
-    return 'Error: parent does not exit';
   }
 };
 Tree.prototype.remove = function(data) {
