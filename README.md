@@ -24,4 +24,4 @@ Of course, all the code can also be found on Github in the repository [data-stru
 - [x] Tree
 - [x] Binary Search Tree
 - [x] Trie
-- [ ] Graph (coming soon)
+- [x] Graph
