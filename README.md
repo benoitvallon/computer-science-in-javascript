@@ -1,6 +1,6 @@
 # Data Structures in JavaScript
 
-This repository is part of a series of posts about data structures reimplemented in JavaScript that I made on my blog (link coming soon).
+This repository is part of a series of posts about data structures reimplemented in JavaScript that I made [on my blog](http://blog.benoitvallon.com).
 
 # About the #data-structures series
 
