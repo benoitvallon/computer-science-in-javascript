@@ -66,7 +66,7 @@ Tree.prototype._preOrder = function(node, fn) {
 Tree.prototype._postOrder = function(node, fn) {
   if(node) {
     for(var i = 0; i < node.children.length; i++) {
-      this._preOrder(node.children[i], fn);
+      this._postOrder(node.children[i], fn);
     }
     if(fn) {
       fn(node);
@@ -150,7 +150,7 @@ tree.traverseBFS(function(node) { console.log(node.data); }); // => ceo cto cfo 
 console.log('--- DFS preOrder');
 tree.traverseDFS(function(node) { console.log(node.data); }, 'preOrder'); // => ceo cto dev1 dev2 dev3 cfo accountant cmo
 console.log('--- DFS postOrder');
-tree.traverseDFS(function(node) { console.log(node.data); }, 'postOrder'); // => cto dev1 dev2 cfo accountant cmo ceo
+tree.traverseDFS(function(node) { console.log(node.data); }, 'postOrder'); // => dev1 dev2 dev3 cto accountant cfo cmo ceo
 tree.remove('cmo');
 tree.print(); // => ceo | cto cfo | dev1 dev2 dev3 accountant
 tree.remove('cfo');
