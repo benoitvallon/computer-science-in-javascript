@@ -26,7 +26,10 @@ DoublyLinkedList.prototype.remove = function(data) {
   var current = this.head;
   while(current) {
     if(current.data === data) {
-      if(current === this.head) {
+      if(current === this.head && current === this.tail) {
+        this.head = null;
+        this.tail = null;
+      } else if(current === this.head) {
         this.head = this.head.next;
         this.head.previous = null;
       } else if(current === this.tail) {
@@ -107,6 +110,10 @@ doublyLinkedList.print(); // => 2 4
 doublyLinkedList.remove(4); // remove tail
 doublyLinkedList.print(); // => 2
 console.log('length is 1:', doublyLinkedList.length()); // => 1
+doublyLinkedList.remove(2); // remove tail, the list should be empty
+doublyLinkedList.print(); // => ''
+console.log('length is 0:', doublyLinkedList.length()); // => 0
+doublyLinkedList.add(2);
 doublyLinkedList.add(6);
 doublyLinkedList.print(); // => 2 6
 doublyLinkedList.insertAfter(3, 2);
