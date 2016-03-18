@@ -11,7 +11,6 @@ MyArray.prototype.remove = function(data) {
   });
 };
 MyArray.prototype.search = function(data) {
-
   var foundIndex = this.array.indexOf(data);
   if(~foundIndex) {
     return foundIndex;
