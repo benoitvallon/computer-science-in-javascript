@@ -6,8 +6,8 @@ This repository contains code about various series of posts that I made [on my b
 
 As of now, it contains 2 main sections:
 
-- Data structures in JavaScript
-- Sorting algorithms in JavaScript
+- [Data structures in JavaScript](https://github.com/benoitvallon/computer-science-in-javascript/tree/master/data-structures-in-javascript)
+- [Sorting algorithms in JavaScript](https://github.com/benoitvallon/computer-science-in-javascript/tree/master/sorting-algorithms-in-javascript)
 
 ## The #data-structures series
 
