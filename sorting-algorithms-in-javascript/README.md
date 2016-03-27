@@ -1,4 +1,4 @@
-# Sorting algorithms in JavaScript
+# Sorting algorithms in JavaScript (ES5 and ES6)
 
 This repository is part of a series of posts about sorting algorithms reimplemented in JavaScript that I made [on my blog](http://blog.benoitvallon.com).
 
