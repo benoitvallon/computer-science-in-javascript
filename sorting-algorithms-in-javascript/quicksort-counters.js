@@ -81,7 +81,7 @@ function partitionLomuto(array, left, right) {
     countInner++;
     if(array[j] <= array[pivot]) {
       countSwap++;
-      swap(array, i , j);
+      swap(array, i, j);
       i = i + 1;
     }
   }

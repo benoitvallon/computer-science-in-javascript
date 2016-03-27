@@ -54,7 +54,7 @@ function partitionLomuto(array, left, right) {
 
   for(var j = left; j < right; j++) {
     if(array[j] <= array[pivot]) {
-      swap(array, i , j);
+      swap(array, i, j);
       i = i + 1;
     }
   }
