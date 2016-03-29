@@ -17,11 +17,7 @@ Set.prototype.remove = function(value) {
   }
 };
 Set.prototype.contains = function(value) {
-  if(~this.values.indexOf(value)) {
-    return true;
-  } else {
-    return false;
-  }
+  return this.values.indexOf(value) !==  -1;
 };
 Set.prototype.union = function(set) {
   var newSet = new Set();

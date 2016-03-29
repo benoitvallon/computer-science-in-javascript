@@ -20,11 +20,7 @@ class Set {
   }
 
   contains(value) {
-    if(~this.values.indexOf(value)) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.values.indexOf(value) !==  -1;
   }
 
   union(set) {
