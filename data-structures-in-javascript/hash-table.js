@@ -16,7 +16,7 @@ HashTable.prototype.add = function(key, value) {
 };
 HashTable.prototype.remove = function(key) {
   var hash = this.calculateHash(key);
-  if(this.values.hasOwnProperty(hash) &&  this.values[hash].hasOwnProperty(key)) {
+  if(this.values.hasOwnProperty(hash) && this.values[hash].hasOwnProperty(key)) {
     delete this.values[hash][key];
     this.numberOfValues--;
   }
@@ -26,7 +26,7 @@ HashTable.prototype.calculateHash = function(key) {
 };
 HashTable.prototype.search = function(key) {
   var hash = this.calculateHash(key);
-  if(this.values.hasOwnProperty(hash) &&  this.values[hash].hasOwnProperty(key)) {
+  if(this.values.hasOwnProperty(hash) && this.values[hash].hasOwnProperty(key)) {
     return this.values[hash][key];
   } else {
     return null;

@@ -18,7 +18,7 @@ class HashTable {
 
   remove(key) {
     const hash = this.calculateHash(key);
-    if(this.values.hasOwnProperty(hash) &&  this.values[hash].hasOwnProperty(key)) {
+    if(this.values.hasOwnProperty(hash) && this.values[hash].hasOwnProperty(key)) {
       delete this.values[hash][key];
       this.numberOfValues--;
     }
@@ -30,7 +30,7 @@ class HashTable {
 
   search(key) {
     const hash = this.calculateHash(key);
-    if(this.values.hasOwnProperty(hash) &&  this.values[hash].hasOwnProperty(key)) {
+    if(this.values.hasOwnProperty(hash) && this.values[hash].hasOwnProperty(key)) {
       return this.values[hash][key];
     } else {
       return null;
