@@ -110,7 +110,7 @@ Trie.prototype.countWords = function() {
 Trie.prototype.getWords = function() {
   var words = [];
   var word = '';
-  this._getWords(this.root, words, words, word);
+  this._getWords(this.root, words, word);
   return words;
 };
 Trie.prototype._getWords = function(node, words, word) {
