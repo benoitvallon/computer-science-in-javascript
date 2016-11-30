@@ -118,7 +118,7 @@ class Trie {
   getWords() {
     const words = [];
     const word = '';
-    this._getWords(this.root, words, words, word);
+    this._getWords(this.root, words, word);
     return words;
   }
 
