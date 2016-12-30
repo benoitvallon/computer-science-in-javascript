@@ -30,7 +30,7 @@ class Tree {
     const queue = [this.root];
     while(queue.length) {
       const node = queue.shift();
-      for(let i = 0; i < node.children.length; i++) {
+      for(let i = node.children.length-1; i >= 0; i--) {
         if(node.children[i].data === data) {
           node.children.splice(i, 1);
         } else {
