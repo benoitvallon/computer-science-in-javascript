@@ -1,0 +1,40 @@
+{
+  "name": "computer-science-in-javascript",
+  "version": "1.0.0",
+  "description": "This repository contains code about various series of posts that I made [on my blog](http://blog.benoitvallon.com) about computer science (mostly data structures and sorting algorithms) reimplemented in JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrpotatoes/computer-science-in-javascript.git"
+  },
+  "keywords": [
+    "datastructures"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrpotatoes/computer-science-in-javascript/issues"
+  },
+  "homepage": "https://github.com/mrpotatoes/computer-science-in-javascript#readme",
+  "dependencies": {
+    "babel-core": "^6.24.0",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-rewire": "^1.0.0",
+    "babel-plugin-transform-async-to-generator": "^6.7.4",
+    "babel-plugin-transform-runtime": "^6.6.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0"
+  }
+}
