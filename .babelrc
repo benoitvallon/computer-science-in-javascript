@@ -1,4 +1,3 @@
 {
-  "presets": ["es2015", "state-0"],
-  "plugins": [ ]
+  "presets": ["es2015", "stage-0"],
 }
