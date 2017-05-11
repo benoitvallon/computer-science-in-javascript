@@ -1,3 +1,5 @@
+https://github.com/Olical/tuple => https://oli.me.uk/2013/07/12/tuples-in-javascript/
+
 # Computer Science in JavaScript (ES5 and ES6)
 
 This repository contains code about various series of posts that I made [on my blog](http://blog.benoitvallon.com) about computer science (mostly data structures and sorting algorithms) reimplemented in JavaScript.
