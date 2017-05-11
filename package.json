@@ -1,25 +1,16 @@
 {
   "name": "computer-science-in-javascript",
   "version": "1.0.0",
-  "description": "This repository contains code about various series of posts that I made [on my blog](http://blog.benoitvallon.com) about computer science (mostly data structures and sorting algorithms) reimplemented in JavaScript.",
+  "description": "Data structures in javascript",
   "main": "index.js",
+  "homepage": "https://github.com/mrpotatoes/computer-science-in-javascript",
+  "author": "Ben Oitvallon",
+  "contributors": [ "Andric LibreSinn" ],
+  "license": "MIT",
   "scripts": {
     "start": "babel-node index.js",
     "test": "mocha ./tests . --compilers js:babel-register --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mrpotatoes/computer-science-in-javascript.git"
-  },
-  "keywords": [
-    "datastructures"
-  ],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mrpotatoes/computer-science-in-javascript/issues"
-  },
-  "homepage": "https://github.com/mrpotatoes/computer-science-in-javascript#readme",
   "dependencies": {
     "babel-core": "^6.24.0",
     "babel-plugin-add-module-exports": "^0.1.2",
