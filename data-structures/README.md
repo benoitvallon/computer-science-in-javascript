@@ -12,13 +12,14 @@ If you feel comfortable with the concept of each data structure and only want to
 
 # The data structures in the series
 
+In order of difficulty.
 - [x] Array
-- [x] Hash Table
+- [x] Stack
 - [x] Set
+- [x] Queue
 - [x] Singly Linked List
 - [x] Doubly Linked List
-- [x] Stack
-- [x] Queue
+- [x] Hash Table
 - [x] Tree
 - [x] Binary Search Tree
 - [x] Trie
