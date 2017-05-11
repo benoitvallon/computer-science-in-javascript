@@ -71,6 +71,11 @@ export default class ArrayDS {
     ~index ? index : null
   )
 
+  /**
+   * [findAll description]
+   * @param {[type]} data [description]
+   * @return {[type]} [description]
+   */
   findAll = (data) => {
     let indexes = []
     let i = -1
