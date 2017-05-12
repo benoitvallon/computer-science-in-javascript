@@ -2,7 +2,6 @@ import chai from 'chai'
 import StackDS from '../data-structures/stack'
 
 chai.should()
-const expect = chai.expect
 
 describe('Stack Data Structure', () => {
   it('add() 3 find length()', (done) => {
@@ -11,7 +10,7 @@ describe('Stack Data Structure', () => {
 
     // Assertions
     stack.length().should.equal(3)
-    stack.getStack().should.deep.equal([1, 2, 3])
+    stack.stack.should.deep.equal([1, 2, 3])
     stack.print().should.equal('1 2 3')
 
     done()
@@ -33,8 +32,8 @@ describe('Stack Data Structure', () => {
     stack.push(1).push(2).push(3).pop()
 
     // Assertions
-    stack.getStack().should.deep.equal([1, 2])
-    stack.push(1).getStack().should.deep.equal([1, 2, 1])
+    stack.stack.should.deep.equal([1, 2])
+    stack.push(1).stack.should.deep.equal([1, 2, 1])
     stack.length().should.equal(3)
 
     done()

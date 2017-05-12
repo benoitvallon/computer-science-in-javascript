@@ -1,9 +1,9 @@
 /**
  * [array description]
- * @type {Array}
+ * @type {ArrayDS}
  */
 export default class ArrayDS {
-  constructor() {
+  constructor () {
     this.array = []
   }
 
@@ -21,15 +21,16 @@ export default class ArrayDS {
   }
 
   /**
-   * [remove description]
-   * @param {[type]} data [description]
-   * @return {[type]} [description]
+   * Remove an item from the array.
+   *
+   * @param {mixed} data The data (a copy) to remove.
+   * @return {ArrayDS} [description]
    */
   remove = (data) => {
-    // filter(): a new array with all elements that pass the test by the provided function.
-    // https://mzl.la/2r1yFPU
-    // So as long as this array does not contain the data passed in it'll be added to the new array.
-    this.array = this.array.filter(current => current !== data)
+    // filter(): a new array with all elements that pass the test by the
+    // provided function. https://mzl.la/2r1yFPU So as long as this array does
+    // not contain the data passed in it'll be added to the new array.
+    this.array = this.array.filter((current) => current !== data)
 
     return this
   }
@@ -72,14 +73,16 @@ export default class ArrayDS {
   )
 
   /**
-   * [findAll description]
-   * @param {[type]} data [description]
-   * @return {[type]} [description]
+   * Find all indexes of data.
+   *
+   * @param {mixed} data The data we are searching for.
+   * @return {array}
    */
   findAll = (data) => {
-    let indexes = []
+    const indexes = []
     let i = -1
 
+    // eslint-disable-next-line
     while ((i = this.array.indexOf(data, i + 1)) != -1) {
       indexes.push(i)
     }
@@ -88,26 +91,31 @@ export default class ArrayDS {
   }
 
   /**
-   * [getAtIndex description]
-   * @param {[type]} index [description]
-   * @return {[type]} [description]
+   * Get the value at given index.
+   *
+   * Does not do error checking; just assumes that value exists.
+   *
+   * @param {integer} index The index the value exists.
+   *
+   * @return {mixed}
    */
   getAtIndex = (index) => (
     this.array[index]
   )
 
   /**
-   * [length description]
-   * @return {[type]} [description]
+   * Get the length of the array.
+   *
+   * @return {integer}
    */
-  length = () =>  (
+  length = () => (
     this.array.length
   )
 
   /**
    * Return this Array object as a string.
    *
-   * @return {[string]} A string representation of the array.
+   * @return {string}
    */
   print = () => (
     this.array.join(' ')

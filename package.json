@@ -51,8 +51,14 @@
         "experimentalObjectRestSpread": true
       }
     },
+    "env": {
+      "node": true,
+      "es6": true,
+      "mocha": true
+     },
     "rules": {
       "no-case-declarations": "off",
+      "no-bitwise": "off",
       "no-plusplus": "off",
       "semi": ["error", "never"],
       "arrow-parens": ["error", "always"],
