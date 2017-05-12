@@ -2,11 +2,9 @@
  * A collection of unique values.
  *
  * Think Venn Diagram
- * Union: All.
- * Interection: The middle bit.
- * Difference: A side minus the middle bit.
- *
- * Coolio.
+ *    Union: All.
+ *    Interection: The middle bit.
+ *    Difference: A side minus the middle bit.
  *
  * @type {Array}
  */
@@ -136,6 +134,7 @@ export default class SetDS {
 
   /**
    * Get the length of the set.
+   *
    * @return {integer}
    */
   length = () => (
