@@ -1,7 +1,7 @@
 /**
  * A class to create a stack.
  *
- * FIFO: First In Last Out
+ * FILO: First In Last Out
  *
  * @type {StackDS}
  */
