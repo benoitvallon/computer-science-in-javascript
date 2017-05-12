@@ -1,11 +1,32 @@
-export default class SetkDS {
-  constructor() {
+/**
+ * A collection of unique values.
+ *
+ * Think Venn Diagram
+ * Union: All.
+ * Interection: The middle bit.
+ * Difference: A side minus the middle bit.
+ *
+ * Coolio.
+ *
+ * @type {Array}
+ */
+export default class SetDS {
+  constructor () {
     this.values = []
     this.numberOfValues = 0
   }
 
+  getSet = () => (
+    this.values
+  )
+
+  /**
+   * Add a value to the set whilst insuring uniqueness.
+   *
+   * @param {mixed} value [description]
+   */
   add = (value) => {
-    if (!~this.values.indexOf(value)) {
+    if (this.values.indexOf(value) < 0) {
       this.values.push(value)
       this.numberOfValues++
     }
@@ -16,7 +37,8 @@ export default class SetkDS {
   remove = (value) => {
     const index = this.values.indexOf(value)
 
-    if (~index) {
+    if (index >= 0) {
+      // https://mzl.la/2pq1VDE: array.splice(start, deleteCount)
       this.values.splice(index, 1)
       this.numberOfValues--
     }
@@ -26,11 +48,12 @@ export default class SetkDS {
 
   union = (set) => {
     const newSet = new Set()
-    set.values.forEach (value => {
+
+    this.values.forEach((value) => {
       newSet.add(value)
     })
 
-    this.values.forEach (value => {
+    set.values.forEach((value) => {
       newSet.add(value)
     })
 
@@ -38,22 +61,22 @@ export default class SetkDS {
   }
 
   intersect = (set) => {
-    const newSet = new Set()
+    const intersection = new SetDS()
 
-    this.values.forEach(value => {
-      if(set.contains(value)) {
-        newSet.add(value)
+    this.values.forEach((value) => {
+      if (set.contains(value)) {
+        intersection.add(value)
       }
     })
 
-    return newSet
+    return intersection
   }
 
   difference = (set) => {
-    const newSet = new Set()
+    const newSet = new SetDS()
 
-    this.values.forEach(value => {
-      if(!set.contains(value)) {
+    this.values.forEach((value) => {
+      if (!set.contains(value)) {
         newSet.add(value)
       }
     })
@@ -61,11 +84,12 @@ export default class SetkDS {
     return newSet
   }
 
-  isSubset = (set) => {
-    return set.values.every(function(value) {
-      return this.contains(value)
-    }, this)
-  }
+  isSubset = (set) => (
+    // If every item in the subset returns true it is a subset.
+    set.values.every((value) => (
+      this.contains(value)
+    ))
+  )
 
   length = () => (
     this.numberOfValues
@@ -74,8 +98,4 @@ export default class SetkDS {
   contains = (value) => (
     this.values.indexOf(value) !== -1
   )
-
-  print = () => {
-    console.log(this.values.join(' '))
-  }
 }

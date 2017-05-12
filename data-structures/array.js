@@ -60,7 +60,7 @@ export default class ArrayDS {
    * below above: ~-1 === 0 == false
    *
    * Don't be cute like this. An easier to read expression is as such and
-   * therefore: index === -1 ? null : index.
+   * therefore: index === -1 ? null : index. Or check for < 0 which is easiest.
    *
    * @FunQuestion: Why not return 0 or -1? Or maybe false or a string?
    *

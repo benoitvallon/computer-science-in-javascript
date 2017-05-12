@@ -5,14 +5,16 @@
   "main": "index.js",
   "homepage": "https://github.com/mrpotatoes/computer-science-in-javascript",
   "author": "Ben Oitvallon",
-  "contributors": [ "Andric LibreSinn" ],
+  "contributors": [
+    "Andric LibreSinn"
+  ],
   "license": "MIT",
   "scripts": {
-    "start": "babel-node index.js",
     "test": "mocha ./tests . --compilers js:babel-register --watch"
   },
   "dependencies": {
     "babel-core": "^6.24.0",
+    "babel-eslint": "^7.2.3",
     "babel-plugin-add-module-exports": "^0.1.2",
     "babel-plugin-rewire": "^1.0.0",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
@@ -33,6 +35,91 @@
     "mocha": "^3.3.0"
   },
   "babel": {
-    "presets": [ "es2015", "stage-0" ]
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "env": {
+      "browser": true,
+      "node": true,
+      "jest": true,
+      "es6": true,
+      "mocha": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true,
+        "jsx": true
+      }
+    },
+    "rules": {
+      "no-case-declarations": "off",
+      "no-plusplus": "off",
+      "space-before-function-paren": [
+        "error",
+        {
+          "anonymous": "always",
+          "named": "always"
+        }
+      ],
+      "arrow-parens": [
+        "error",
+        "always"
+      ],
+      "arrow-body-style": [
+        "error",
+        "as-needed"
+      ],
+      "comma-dangle": [
+        "error",
+        "always-multiline"
+      ],
+      "import/imports-first": 0,
+      "import/newline-after-import": 0,
+      "import/no-dynamic-require": 0,
+      "import/no-extraneous-dependencies": 0,
+      "import/no-named-as-default": 0,
+      "import/no-unresolved": 2,
+      "import/prefer-default-export": 0,
+      "indent": [
+        "error",
+        2,
+        {
+          "SwitchCase": 1
+        }
+      ],
+      "jsx-a11y/aria-props": 2,
+      "jsx-a11y/heading-has-content": 0,
+      "jsx-a11y/href-no-hash": 2,
+      "jsx-a11y/label-has-for": 2,
+      "jsx-a11y/mouse-events-have-key-events": 2,
+      "jsx-a11y/role-has-required-aria-props": 2,
+      "jsx-a11y/role-supports-aria-props": 2,
+      "max-len": [
+        "warn",
+        {
+          "code": 80,
+          "ignoreComments": false,
+          "ignoreUrls": true
+        }
+      ],
+      "newline-per-chained-call": 0,
+      "no-confusing-arrow": 0,
+      "no-console": 1,
+      "no-use-before-define": 0,
+      "prefer-template": 2,
+      "class-methods-use-this": 0,
+      "semi": [
+        "error",
+        "never"
+      ]
+    }
   }
 }
