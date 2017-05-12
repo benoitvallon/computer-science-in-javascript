@@ -1,5 +1,8 @@
 /**
  * A class to create a stack.
+ *
+ * FILO: First In Last Out
+ *
  * @type {StackDS}
  */
 export default class StackDS {
