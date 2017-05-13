@@ -60,6 +60,8 @@ export default class SinglyLinkedListDS {
    *  5. Return myself so that we can get that sweet, sweet DSL going.
    *
    * @param {mixed} data The data to store.
+   *
+   * @return {SinglyLinkedListDS}
    */
   add = (data) => {
     const node = new Node(data)

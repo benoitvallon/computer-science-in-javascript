@@ -1,38 +1,38 @@
 // array to sort
-const array = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8];
+const array = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8]
 
 // Be careful: this is a very basic implementation which is nice to understand
 // the deep principle of bubble sort (going through all comparisons) but it can
 // be greatly improved for performances
-function bubbleSortBasic(array) {
-  for(let i = 0; i < array.length; i++) {
-    for(let j = 1; j < array.length; j++) {
-      if(array[j - 1] > array[j]) {
-        [array[j - 1], array[j]] = [array[j], array[j - 1]];
+function bubbleSortBasic (array) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 1; j < array.length; j++) {
+      if (array[j - 1] > array[j]) {
+        [array[j - 1], array[j]] = [array[j], array[j - 1]]
       }
     }
   }
-  return array;
+  return array
 }
 
 // Output: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-console.log(bubbleSortBasic(array.slice()));
+console.log(bubbleSortBasic(array.slice()))
 
 // Correct implementation: this is the usual implementation of the bubble sort
 // algorithm. Some loops execution are avoided if not they are not needed
-function bubbleSort(array) {
-  let swapped;
+function bubbleSort (array) {
+  let swapped
   do {
-    swapped = false;
-    for(let i = 0; i < array.length; i++) {
-      if(array[i] && array[i + 1] && array[i] > array[i + 1]) {
-        [array[i], array[i + 1]] = [array[i + 1], array[i]];
-        swapped = true;
+    swapped = false
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] && array[i + 1] && array[i] > array[i + 1]) {
+        [array[i], array[i + 1]] = [array[i + 1], array[i]]
+        swapped = true
       }
     }
-  } while(swapped);
-  return array;
+  } while (swapped)
+  return array
 }
 
 // Output: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-console.log(bubbleSort(array.slice()));
+console.log(bubbleSort(array.slice()))
