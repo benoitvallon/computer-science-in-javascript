@@ -104,7 +104,11 @@ export default class DoublyLinkedListDS {
    * provide much value to pull it out.
    *
    * How it works:
-   *  1.
+   *  1. If the data we want to remove is the current then we'll remove it.
+   *    a. Otherwise set current to it's next.
+   *  2. We restich it (check it's documentation).
+   *  3. Update the number of values.
+   *  4. Return ourself so that we can chain.
    *
    * @param {mixed} data Data to be removed.
    *
@@ -114,17 +118,40 @@ export default class DoublyLinkedListDS {
     let current = this.head
 
     while (current) {
+      // This is what we want to remove.
       if (current.data === data) {
+        // Re-stitch the head and tail and let the data die off in the ether.
         this.restitch(current)
+
+        // Decrement the count.
         this.numberOfValues--
       }
 
+      // Goto the next item.
       current = current.next
     }
 
     return this
   }
 
+  /**
+   * This is what actually does the restitching.
+   *
+   * There are multiple special cases that we need to handle.
+   *  1. It's the HEAD and TAIL NODE (only node).
+   *    - Clear the list.
+   *  2. It is the HEAD NODE.
+   *    - Make head's next head and remove the pointer to previous. Thusly
+   *      removing any links to this node and allowing garbage collection to
+   *      take it to the next world.
+   *  3. It is the TAIL NODE.
+   *    - Same as before but in the opposite.
+   *  4. It's a middle node.
+   *    - Then we want to get current's previous and next to point to each
+   *      other.
+   *
+   * @param {Node} current The current node to remove
+   */
   restitch = (current) => {
     if (current === this.head && current === this.tail) {
       this.head = null
@@ -141,12 +168,35 @@ export default class DoublyLinkedListDS {
     }
   }
 
+  /**
+   * Insert data after certain data.
+   *
+   * We in fact do not care about the head since that's where we start and we
+   * ONLY allow insert after not before.
+   *
+   * How it works:
+   *  1. While we have a list (aka current is a valid node) do our comparisons.
+   *  2. If the current's data where we want to insert after then:
+   *    a. Check if TAIL NODE then just this.add().
+   *    a. Stitch it up by:
+   *      - Using current's next's previous and setting it to the new node.
+   *      - Setting new node's previous to current and next to current's next.
+   *      - Then set current's next to our new node.
+   *      -
+   *  3. Increment our internal count/length/numberOfValues.
+   *  4. Set current to it's next and continue.
+   *
+   * @param {mixed} data The data to insert.
+   * @param {mixed} toNodeData The data to insert after.
+   * @return {SinglyLinkedListDS}
+   */
   insertAfter (data, toNodeData) {
     let current = this.head
 
     while (current) {
       if (current.data === toNodeData) {
         const node = new Node(data)
+
         if (current === this.tail) {
           this.add(data)
         } else {

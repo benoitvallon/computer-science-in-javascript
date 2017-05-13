@@ -16,7 +16,7 @@ describe('Singly Linked List Data Structure', () => {
     done()
   })
 
-  it('add() 5 to the list', (done) => {
+  it('add(1...5) to the list', (done) => {
     const sll = new SinglyLinkedListDS()
     sll.add(1).add(2).add(3).add(4).add(5)
 
