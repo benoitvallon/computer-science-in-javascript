@@ -1,5 +1,8 @@
 /**
- * [queue description]
+ * The Queue data strucutre.
+ *
+ * FIFO. First in first out.
+ *
  * @type {Array}
  */
 export default class QueueDS {
