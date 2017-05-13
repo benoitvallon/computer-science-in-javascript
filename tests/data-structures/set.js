@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import chai from 'chai'
-import SetDS from '../data-structures/set'
+import SetDS from '../../data-structures/set'
 
 chai.should()
 const expect = chai.expect
