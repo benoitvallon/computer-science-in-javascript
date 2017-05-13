@@ -11,7 +11,7 @@
   "license": "MIT",
   "scripts": {
     "start": "mocha --recursive ./tests --compilers js:babel-register --watch",
-    "test": "mocha ./tests . --compilers js:babel-register --watch"
+    "test": "mocha --recursive ./tests --compilers js:babel-register --watch"
   },
   "dependencies": {
     "babel-core": "^6.24.0",
