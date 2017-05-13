@@ -1,12 +1,38 @@
+/**
+ * [queue description]
+ * @type {Array}
+ */
 export default class QueueDS {
   constructor () {
     this.queue = []
   }
 
+  /**
+   * Helper method to get the internal queue.
+   *
+   * @return {array}
+   */
+  getQueue = () => (
+    this.queue
+  )
+
+  /**
+   * Add an item to the back of the queue.
+   *
+   * @param {mixed} value The item to add to the queue.
+   * @return {QueueDS}
+   */
   enqueue = (value) => {
     this.queue.push(value)
+
+    return this
   }
 
+  /**
+   * Remove the first item of the queue.
+   *
+   * @return {mixed}
+   */
   dequeue = () => (
     this.queue.shift()
   )
@@ -27,10 +53,5 @@ export default class QueueDS {
    */
   length = () => (
     this.queue.length
-  )
-
-  // @todo: Remove me.
-  print = () => (
-    this.queue.join(' ')
   )
 }

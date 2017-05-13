@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import chai from 'chai'
 import ArrayDS from '../data-structures/array'
 
@@ -88,7 +89,7 @@ describe('Array Data Structure', () => {
     array.getAtIndex(0).should.equal(1)
     array.getAtIndex(1).should.equal(2)
     expect(array.getAtIndex(-1)).to.be.undefined
-    
+
     done()
   })
 })
