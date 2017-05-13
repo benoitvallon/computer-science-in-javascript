@@ -6,7 +6,7 @@ chai.should()
 const expect = chai.expect
 
 describe('Array Data Structure', () => {
-  it('add() 2 find length()', (done) => {
+  it('add(1...2) find length()', (done) => {
     const array = new ArrayDS()
     array.add(1).add(2)
 
@@ -17,7 +17,7 @@ describe('Array Data Structure', () => {
     done()
   })
 
-  it('add() 4', (done) => {
+  it('add(1...4)', (done) => {
     const array = new ArrayDS()
     array.add(1).add(2).add(3).add(4)
 
@@ -30,7 +30,7 @@ describe('Array Data Structure', () => {
     done()
   })
 
-  it('Add() 4 remove() one.', (done) => {
+  it('add(1...4) remove() one.', (done) => {
     const array = new ArrayDS()
     array.add(1).add(2).add(3).add(4).remove(2)
 
@@ -43,7 +43,7 @@ describe('Array Data Structure', () => {
     done()
   })
 
-  it('Add() 4 remove() one add() two and remove() one.', (done) => {
+  it('add(1...4) remove(1) add(1...2) and remove(1).', (done) => {
     const array = new ArrayDS()
     array.add(1).add(2).add(3).add(4).remove(2).add(5).add(6).remove(3)
 
@@ -56,7 +56,7 @@ describe('Array Data Structure', () => {
     done()
   })
 
-  it('Add 5 and search()', (done) => {
+  it('add(1...5) and search() invalid', (done) => {
     const array = new ArrayDS()
     array.add(1).add(2).add(3).add(4).add(1)
 
@@ -68,7 +68,7 @@ describe('Array Data Structure', () => {
     done()
   })
 
-  it('Add 5 and findAll()', (done) => {
+  it('add(1...5) and findAll()', (done) => {
     const array = new ArrayDS()
     array.add(1).add(2).add(3).add(4).add(1)
 
@@ -80,7 +80,7 @@ describe('Array Data Structure', () => {
     done()
   })
 
-  it('Add 4 and getAtIndex()', (done) => {
+  it('add(1...4) and getAtIndex()', (done) => {
     const array = new ArrayDS()
     array.add(1).add(2).add(3).add(4)
 

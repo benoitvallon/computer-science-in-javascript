@@ -6,7 +6,7 @@ chai.should()
 const expect = chai.expect
 
 describe('Set Data Structure', () => {
-  it('add() 3 find length()', (done) => {
+  it('add(1...3) find length()', (done) => {
     const set = new SetDS()
 
     set.add(1).add(2).add(3)
@@ -19,7 +19,7 @@ describe('Set Data Structure', () => {
     done()
   })
 
-  it('add() 3 and remove() 2 items from set', (done) => {
+  it('add(1...3) and remove() 2 items from set', (done) => {
     const set = new SetDS()
 
     set.add(1).add(2).add(3)
@@ -33,7 +33,7 @@ describe('Set Data Structure', () => {
     done()
   })
 
-  it('add() 3 and run contains()', (done) => {
+  it('add(1...3) and run contains()', (done) => {
     const set = new SetDS()
 
     set.add(1).add(2).add(3)
@@ -45,7 +45,7 @@ describe('Set Data Structure', () => {
     done()
   })
 
-  it('add() 3 and run contains()', (done) => {
+  it('add(1...3) and run contains()', (done) => {
     const set = new SetDS()
 
     set.add(1).add(2).add(3)

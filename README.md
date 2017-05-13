@@ -56,8 +56,4 @@ Unlike the [data structures](http://blog.benoitvallon.com/data-structures-in-jav
 
 By doing so we will be able to compare the different sorting algorithms more easily. Sorting algorithms are very sensitive to the input data so we will also try different input data to see how they affect the performances.
 
-## Why this repository?
-
-At the beginning I started those series with 2 different repositories, one for the data structures and another one for the sorting algorithms. It was nice to keep things separately at first but grouping them into the same repository makes more sense to me now.
-
-All computer science concepts are located at the same place and it will allow me to add even more things in the future. Moreover, it won’t be mandatory that those things will be about data structures or sorting algorithms. There are other important things to know too.
+https://github.com/eyas-ranjous/datastructures-js

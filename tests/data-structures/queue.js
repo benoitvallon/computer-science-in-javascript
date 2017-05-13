@@ -14,7 +14,7 @@ describe('Queue Data Structure', () => {
     done()
   })
 
-  it('enqueue() 3 items', (done) => {
+  it('enqueue(1...3) items', (done) => {
     const queue = new QueueDS()
     queue.enqueue(1).enqueue(2).enqueue(3)
 
@@ -24,7 +24,7 @@ describe('Queue Data Structure', () => {
     done()
   })
 
-  it('enqueue() 3 items and dequeue() 2 times', (done) => {
+  it('enqueue(1...3) items and dequeue() 2x', (done) => {
     const queue = new QueueDS()
     queue.enqueue(1).enqueue(2).enqueue(3)
 
@@ -38,7 +38,7 @@ describe('Queue Data Structure', () => {
     done()
   })
 
-  it('enqueue() 3 items peek() then remove one and peek() again.', (done) => {
+  it('enqueue(1...3) items peek() then dequeue() and peek() again.', (done) => {
     const queue = new QueueDS()
     queue.enqueue(1).enqueue(2).enqueue(3)
 

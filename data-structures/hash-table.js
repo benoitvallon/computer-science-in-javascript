@@ -1,4 +1,5 @@
-class HashTable {
+/* eslint-disable no-prototype-builtins */
+export default class HashTableDS {
   constructor (size) {
     this.values = {}
     this.numberOfValues = 0
@@ -14,6 +15,8 @@ class HashTable {
       this.numberOfValues++
     }
     this.values[hash][key] = value
+
+    return this
   }
 
   remove (key) {
@@ -50,17 +53,3 @@ class HashTable {
     console.log(string.trim())
   }
 }
-
-const hashTable = new HashTable(3)
-hashTable.add('first', 1)
-hashTable.add('second', 2)
-hashTable.add('third', 3)
-hashTable.add('fourth', 4)
-hashTable.add('fifth', 5)
-hashTable.print() // => 2 4 1 3 5
-console.log('length gives 5:', hashTable.length()) // => 5
-console.log('search second gives 2:', hashTable.search('second')) // => 2
-hashTable.remove('fourth')
-hashTable.remove('first')
-hashTable.print() // => 2 3 5
-console.log('length gives 3:', hashTable.length()) // => 3
