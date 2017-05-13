@@ -18,7 +18,7 @@ In order of difficulty.
 - [x] Set
 - [x] Queue
 - [x] Singly Linked List
-- [ ] Doubly Linked List
+- [x] Doubly Linked List
 - [ ] Hash Table
 - [ ] Tree
 - [ ] Binary Search Tree
