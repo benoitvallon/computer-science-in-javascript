@@ -1,25 +1,15 @@
-# Data Structures in JavaScript (ES5 and ES6)
+[A good writeup of each data structure](https://blog.syncano.io/data-structures-in-javascript/)
 
-This repository is part of a series of posts about data structures reimplemented in JavaScript that I made [on my blog](http://blog.benoitvallon.com).
+[Data Structures With JavaScript: Tree](https://code.tutsplus.com/articles/data-structures-with-javascript-tree--cms-23393)
 
-# About the #data-structures series
-
-The [#data-structures series](http://blog.benoitvallon.com/category/data-structures-in-javascript) is a collection of posts about reimplemented data structures in JavaScript.
-
-If you are not familiar with data structures, a quick introduction and the full list of reimplemented data structures can be found in the [introduction post of the series on data structures in JavaScript](http://blog.benoitvallon.com/data-structures-in-javascript/data-structures-in-javascript).
-
-If you feel comfortable with the concept of each data structure and only want to see the code, have a look at the summary post of the series. It removes all explanations and contains only the [JavaScript code for all data structures](http://blog.benoitvallon.com/data-structures-in-javascript/data-structures-in-javascript-all-the-code) discussed in the series.
-
-# The data structures in the series
-
-In order of difficulty.
+Data Structures in order of difficulty. (`x == tested && documented`)
 - [x] Array
 - [x] Stack
 - [x] Set
 - [x] Queue
 - [x] Singly Linked List
 - [x] Doubly Linked List
-- [ ] Hash Table
+- [x] Hash Table
 - [ ] Tree
 - [ ] Binary Search Tree
 - [ ] Trie
