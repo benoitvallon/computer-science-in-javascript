@@ -8,7 +8,7 @@
 https://github.com/stoimen/algorithms
 
 [x] Bubble Sort
-[ ] Selection Sort
+[x] Selection Sort
 [ ] Insertion Sort
 [ ] Merger Sort
 [ ] Quick Sort

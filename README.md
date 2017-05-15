@@ -1,3 +1,5 @@
+**NOTE**: Project assumes you have `node` and `npm/yarn` installed. If not go ahead and do that now.
+
 * https://github.com/Olical/tuple => https://oli.me.uk/2013/07/12/tuples-in-javascript/
 * https://gist.github.com/samwize/8877226
 

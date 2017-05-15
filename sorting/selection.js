@@ -1,32 +1,82 @@
-// sample of arrays to sort
-const arrayRandom = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8]
-const arrayOrdered = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-const arrayReversed = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+/* eslint-disable no-console */
 
-function selectionSort (array) {
-  let countOuter = 0
-  let countInner = 0
-  let countSwap = 0
+/**
+ * Sort an array using the selection sort algorithm.
+ *
+ * The selection sort algorithm sorts an array by repeatedly finding the minimum element
+ * (considering ascending order) from unsorted part and putting it at the beginning. The
+ * algorithm maintains two subarrays in a given array.
+ *   1. The subarray which is already sorted
+ *   2. Remaining subarray which is unsorted.
+ *
+ * In every iteration of selection sort, the minimum element (considering ascending
+ * order) from the unsorted subarray is picked and moved to the sorted subarray.
+ *
+ * Following example explains the above steps:
+ *
+ *   arr[] = 64 25 12 22 11
+ *   Find the minimum element in arr[0...4] and place it at beginning
+ *   11 | 25 12 22 64
+ *
+ *   Find the minimum element in arr[1...4] and place it at beginning of arr[1...4]
+ *   11 12 | 25 22 64
+ *
+ *   Find the minimum element in arr[2...4] and place it at beginning of arr[2...4]
+ *   11 12 22 | 25 64
+ *
+ *   Find the minimum element in arr[3...4] and place it at beginning of arr[3...4]
+ *   11 12 22 25 | 64
+ *
+ * @see http://www.geeksforgeeks.org/selection-sort/
+ *
+ * @param {array} array The array to sort.
+ * @return {array}
+ */
+export const selectionSort = (array) => {
+  const sortedArray = array
+  const arrayLength = sortedArray.length
+  let minimumIndex = sortedArray.length
+  let temp = sortedArray.length
 
-  for (let i = 0; i < array.length; i++) {
-    countOuter++
-    let min = i
-    for (let j = i + 1; j < array.length; j++) {
-      countInner++
-      if (array[j] < array[min]) {
-        min = j
+  for (let i = 0; i < arrayLength; i++) {
+    minimumIndex = i
+
+    // Iterate and find the index of the smallest element starting at the next element
+    // from the sorted array.
+    for (let j = i + 1; j < arrayLength; j++) {
+      // We do not break here because we need to compare the entire list.
+      if (sortedArray[j] < sortedArray[minimumIndex]) {
+        minimumIndex = j
       }
     }
-    if (i !== min) {
-      countSwap++;
-      [array[i], array[min]] = [array[min], array[i]]
-    }
+
+    // Perform the swap and go to the next element in the list.
+    temp = sortedArray[i]
+    sortedArray[i] = sortedArray[minimumIndex]
+    sortedArray[minimumIndex] = temp
   }
 
-  console.log('outer:', countOuter, 'inner:', countInner, 'swap:', countSwap)
-  return array
+  return sortedArray
 }
 
-selectionSort(arrayRandom.slice()) // => outer: 10 inner: 45 swap: 5
-selectionSort(arrayOrdered.slice()) // => outer: 10 inner: 45 swap: 0
-selectionSort(arrayReversed.slice()) // => outer: 10 inner: 45 swap: 5
+// export const selectionSortRecursive = (array, startIndex) => {
+//   // http://www.cs.kzoo.edu/cs210/Labs/Recursion/recursiveSelSort.html
+//   if (startIndex >= array.length - 1) {
+//     return
+//   }
+//
+//   const minIndex = startIndex
+//
+//   for (let index = startIndex + 1; index < array.length; index++) {
+//     if (array[index] < array[minIndex]) {
+//       minIndex = index
+//     }
+//   }
+//
+//   const temp = array[startIndex]
+//   array[startIndex] = array[minIndex]
+//   array[minIndex] = temp
+//
+//   // Our recursive call.
+//   selectionSort(array, startIndex + 1)
+// }
