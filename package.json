@@ -11,7 +11,10 @@
   "license": "MIT",
   "scripts": {
     "start": "mocha --recursive ./tests --compilers js:babel-register --watch",
-    "test": "mocha --recursive ./tests --compilers js:babel-register --watch"
+    "test": "mocha --recursive ./tests --compilers js:babel-register --watch",
+    "test:data-structures": "mocha ./tests/data-structures --compilers js:babel-register --watch",
+    "test:recursion": "mocha ./tests/recursion --compilers js:babel-register --watch",
+    "test:sorting": "mocha ./tests/sorting --compilers js:babel-register --watch"
   },
   "dependencies": {
     "babel-core": "^6.24.0",
