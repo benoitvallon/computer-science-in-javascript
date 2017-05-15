@@ -6,7 +6,7 @@ import { fullFixture, removedCtoFixture, removedCfoFixture } from '../fixtures/t
 chai.should()
 const expect = chai.expect
 
-describe('Tree Data Structure', () => {
+describe('[Data Structure] Tree', () => {
   it('TreeDS() root should be null', (done) => {
     const tree = new TreeDS()
 

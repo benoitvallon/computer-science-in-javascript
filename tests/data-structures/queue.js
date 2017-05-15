@@ -3,7 +3,7 @@ import QueueDS from '../../data-structures/queue'
 
 chai.should()
 
-describe('Queue Data Structure', () => {
+describe('[Data Structure] Queue', () => {
   it('Get the length() of the queue', (done) => {
     const queue = new QueueDS()
     queue.enqueue(1).enqueue(2).enqueue(3)

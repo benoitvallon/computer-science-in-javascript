@@ -3,7 +3,7 @@ import StackDS from '../../data-structures/stack'
 
 chai.should()
 
-describe('Stack Data Structure', () => {
+describe('[Data Structure] Stack', () => {
   it('add(1...3) find length()', (done) => {
     const stack = new StackDS()
     stack.push(1).push(2).push(3)

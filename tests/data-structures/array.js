@@ -5,7 +5,7 @@ import ArrayDS from '../../data-structures/array'
 chai.should()
 const expect = chai.expect
 
-describe('Array Data Structure', () => {
+describe('[Data Structure] Array', () => {
   it('add(1...2) find length()', (done) => {
     const array = new ArrayDS()
     array.add(1).add(2)

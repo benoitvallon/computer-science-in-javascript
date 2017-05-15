@@ -4,7 +4,7 @@ import DoublyLinkedListDS from '../../data-structures/linked-list-doubly'
 
 chai.should()
 
-describe('Doubly Linked List Data Structure', () => {
+describe('[Data Structure] Doubly Linked List', () => {
   it('add(1...5) and get the length() of the linked list.', (done) => {
     const dll = new DoublyLinkedListDS()
     dll.add(1).add(2).add(3).add(4).add(5)

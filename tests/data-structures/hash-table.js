@@ -5,7 +5,7 @@ import HashTableDS from '../../data-structures/hash-table'
 chai.should()
 const expect = chai.expect
 
-describe('Hash Table Data Structure', () => {
+describe('[Data Structure] Hash Table', () => {
   it('HashTableDS(0...13) then calculateHash(w9n65bqdlkeoc) for each.', (done) => {
     const hash1 = new HashTableDS(1)
     const hash2 = new HashTableDS(2)

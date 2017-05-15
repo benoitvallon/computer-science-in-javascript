@@ -5,7 +5,7 @@ import SinglyLinkedListDS from '../../data-structures/linked-list-singly'
 chai.should()
 const expect = chai.expect
 
-describe('Singly Linked List Data Structure', () => {
+describe('[Data Structure] Singly Linked List', () => {
   it('Get the length() of the linked list.', (done) => {
     const sll = new SinglyLinkedListDS()
     sll.add(1).add(2).add(3).add(4).add(5)

@@ -5,7 +5,7 @@ import SetDS from '../../data-structures/set'
 chai.should()
 const expect = chai.expect
 
-describe('Set Data Structure', () => {
+describe('[Data Structure] Set', () => {
   it('add(1...3) find length()', (done) => {
     const set = new SetDS()
 
