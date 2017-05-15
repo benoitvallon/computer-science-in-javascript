@@ -1,8 +1,21 @@
-// array to sort
-const array = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8]
+// sample of arrays to sort
+const arrayRandom = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8]
+const arrayOrdered = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const arrayReversed = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+let countOuter = 0
+let countInner = 0
+let countSwap = 0
+
+function resetCounters () {
+  countOuter = 0
+  countInner = 0
+  countSwap = 0
+}
 
 // basic implementation (pivot is the first element of the array)
 function quicksortBasic (array) {
+  countOuter++
   if (array.length < 2) {
     return array
   }
@@ -12,6 +25,7 @@ function quicksortBasic (array) {
   const greater = []
 
   for (let i = 1; i < array.length; i++) {
+    countInner++
     if (array[i] < pivot) {
       lesser.push(array[i])
     } else {
@@ -22,10 +36,21 @@ function quicksortBasic (array) {
   return quicksortBasic(lesser).concat(pivot, quicksortBasic(greater))
 }
 
-console.log(quicksortBasic(array.slice())) // => [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+quicksortBasic(arrayRandom.slice()) // => outer: 13 inner: 25 swap: 0
+console.log('outer:', countOuter, 'inner:', countInner, 'swap:', countSwap)
+resetCounters()
+
+quicksortBasic(arrayOrdered.slice()) // => outer: 19 inner: 45 swap: 0
+console.log('outer:', countOuter, 'inner:', countInner, 'swap:', countSwap)
+resetCounters()
+
+quicksortBasic(arrayReversed.slice()) // => outer: 19 inner: 45 swap: 0
+console.log('outer:', countOuter, 'inner:', countInner, 'swap:', countSwap)
+resetCounters()
 
 // classic implementation (with Hoare or Lomuto partition scheme, you can comment either one method or the other to see the difference)
 function quicksort (array, left, right) {
+  countOuter++
   left = left || 0
   right = right || array.length - 1
 
@@ -47,12 +72,15 @@ function partitionLomuto (array, left, right) {
   let last = left
 
   for (let j = left; j < right; j++) {
+    countInner++
     if (array[j] <= array[pivot]) {
+      countSwap++;
       [array[i], array[j]] = [array[j], array[i]]
       i += 1
     }
     last = j + 1
   }
+  countSwap++;
   [array[i], array[last]] = [array[last], array[i]]
   return i
 }
@@ -61,6 +89,7 @@ function partitionHoare (array, left, right) {
   const pivot = Math.floor((left + right) / 2)
 
   while (left <= right) {
+    countInner++
     while (array[left] < array[pivot]) {
       left++
     }
@@ -68,6 +97,7 @@ function partitionHoare (array, left, right) {
       right--
     }
     if (left <= right) {
+      countSwap++;
       [array[left], array[right]] = [array[right], array[left]]
       left++
       right--
@@ -76,4 +106,17 @@ function partitionHoare (array, left, right) {
   return left
 }
 
-console.log(quicksort(array.slice())) // => [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+quicksort(arrayRandom.slice())
+// => Hoare: outer: 9 inner: 12 swap: 12 - Lomuto: outer: 10 inner: 35 swap: 28
+console.log('outer:', countOuter, 'inner:', countInner, 'swap:', countSwap)
+resetCounters()
+
+quicksort(arrayOrdered.slice())
+// => Hoare: outer: 9 inner: 9 swap: 9 - Lomuto: outer: 9 inner: 45 swap: 54
+console.log('outer:', countOuter, 'inner:', countInner, 'swap:', countSwap)
+resetCounters()
+
+quicksort(arrayReversed.slice())
+// => Hoare: outer: 9 inner: 13 swap: 13 - Lomuto: outer: 10 inner: 54 swap: 39
+console.log('outer:', countOuter, 'inner:', countInner, 'swap:', countSwap)
+resetCounters()
