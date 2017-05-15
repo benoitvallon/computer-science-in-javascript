@@ -7,19 +7,19 @@
 
 https://github.com/stoimen/algorithms
 
-* Bubble Sort
-* Selection Sort
-* Insertion Sort
-* Merger Sort
-* Quick Sort
-* Heap Sort
-* Bucket Sort
-* Shell Sort
-* PigeonHole Sort
-* BinaryTree Sort
-* Radix Sort
-* Cocktail Sort
-* Other Sort
+[x] Bubble Sort
+[ ] Selection Sort
+[ ] Insertion Sort
+[ ] Merger Sort
+[ ] Quick Sort
+[ ] Heap Sort
+[ ] Bucket Sort
+[ ] Shell Sort
+[ ] PigeonHole Sort
+[ ] BinaryTree Sort
+[ ] Radix Sort
+[ ] Cocktail Sort
+[ ] Other Sort
 
 ## Bubble Sort
 1. You compare the first item with the second. If the first item is bigger than the second item. you swap them so that the bigger one stays in the second position.
