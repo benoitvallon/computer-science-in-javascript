@@ -1,4 +1,5 @@
-https://github.com/Olical/tuple => https://oli.me.uk/2013/07/12/tuples-in-javascript/
+* https://github.com/Olical/tuple => https://oli.me.uk/2013/07/12/tuples-in-javascript/
+* https://gist.github.com/samwize/8877226
 
 Everything is done via tests. It should be noted, though, that not all possible paths are tested in this repo. Just "enough" for each function so that the theory can be learned.
 
