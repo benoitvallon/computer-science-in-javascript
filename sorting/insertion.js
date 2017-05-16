@@ -56,7 +56,5 @@ export const insertionSort = (array) => {
     sorted[j + 1] = pivot
   }
 
-  console.log(sorted)
-
   return sorted
 }

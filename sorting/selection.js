@@ -59,6 +59,9 @@ export const selectionSort = (array) => {
   return sortedArray
 }
 
+/**
+ * @todo: Finish this work buddy.
+ */
 // export const selectionSortRecursive = (array, startIndex) => {
 //   // http://www.cs.kzoo.edu/cs210/Labs/Recursion/recursiveSelSort.html
 //   if (startIndex >= array.length - 1) {

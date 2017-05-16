@@ -10,7 +10,7 @@ https://github.com/stoimen/algorithms
 [x] Bubble Sort
 [x] Selection Sort
 [x] Insertion Sort
-[ ] Merger Sort
+[x] Merge Sort
 [ ] Quick Sort
 [ ] Heap Sort
 [ ] Bucket Sort
