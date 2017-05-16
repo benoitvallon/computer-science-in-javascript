@@ -36,7 +36,8 @@
  * @return {array}
  */
 export const insertionSort = (array) => {
-  const sorted = array
+  // Using .slice(0) is the ONLY way to clone the array.
+  const sorted = array.slice(0)
 
   // Remember, we start at 1 because we assume the first item of the array as sorted. This
   // only saves us one iteration. In other words the first element of this collection will
@@ -44,12 +45,12 @@ export const insertionSort = (array) => {
   // this implicit skip.
   //
   // i is our index in our sorted array while j is our index in the unsorted array.
-  for (let i = 1; i < array.length; i++) {
-    const pivot = array[i]
+  for (let i = 1; i < sorted.length; i++) {
+    const pivot = sorted[i]
     let j = i - 1
 
-    while (j >= 0 && array[j] > pivot) {
-      sorted[j + 1] = array[j]
+    while (j >= 0 && sorted[j] > pivot) {
+      sorted[j + 1] = sorted[j]
       j--
     }
 
