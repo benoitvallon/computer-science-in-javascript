@@ -1,6 +1,6 @@
 import chai from 'chai'
 import { selectionSort } from '../../sorting/selection'
-import { fixture1, fixture2, fixture3 } from '../fixtures/selection-sort'
+import { fixture1, fixture2, fixture3 } from '../fixtures/sorting'
 
 chai.should()
 
