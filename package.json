@@ -20,6 +20,7 @@
     "babel-core": "^6.24.0",
     "babel-eslint": "^7.2.3",
     "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-namespace": "^0.2.2",
     "babel-plugin-rewire": "^1.0.0",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -42,6 +43,25 @@
     "presets": [
       "es2015",
       "stage-0"
+    ],
+    "plugins": [
+      ["namespace", {
+        "disableSync": false,
+        "sources": [
+          "src"
+        ],
+        "includes": [
+          "foo"
+        ],
+        "excludes": [
+          "node_modules"
+        ],
+        "namespaces": {
+          "tests": "./tests",
+          "sorting": "./sorting",
+          "data-structures": "./data-structures"
+        }
+      }]
     ]
   },
   "eslintConfig": {
@@ -59,16 +79,34 @@
       "node": true,
       "es6": true,
       "mocha": true
-     },
+    },
     "rules": {
       "no-case-declarations": "off",
       "no-bitwise": "off",
       "no-plusplus": "off",
-      "semi": ["error", "never"],
-      "arrow-parens": ["error", "always"],
-      "arrow-body-style": ["error", "as-needed"],
-      "comma-dangle": ["error", "always-multiline"],
-      "indent": [ "error", 2, { "SwitchCase": 1 } ],
+      "semi": [
+        "error",
+        "never"
+      ],
+      "arrow-parens": [
+        "error",
+        "always"
+      ],
+      "arrow-body-style": [
+        "error",
+        "as-needed"
+      ],
+      "comma-dangle": [
+        "error",
+        "always-multiline"
+      ],
+      "indent": [
+        "error",
+        2,
+        {
+          "SwitchCase": 1
+        }
+      ],
       "import/imports-first": 0,
       "import/newline-after-import": 0,
       "import/no-dynamic-require": 0,

@@ -1,5 +1,9 @@
 **NOTE**: Project assumes you have `node` and `npm/yarn` installed. If not go ahead and do that now.
 
+This is important as this is what I use so that I don't need to keep typing `../../`
+
+https://github.com/yudhasetiawan/babel-plugin-namespace
+
 * https://github.com/Olical/tuple => https://oli.me.uk/2013/07/12/tuples-in-javascript/
 * https://gist.github.com/samwize/8877226
 
