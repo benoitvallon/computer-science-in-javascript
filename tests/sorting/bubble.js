@@ -1,4 +1,5 @@
 import chai from 'chai'
+import { fixture1, fixture2, fixture3, fixture4, fixture5 } from '../fixtures/sorting'
 import { bubbleSort, bubbleSortRecursive } from '../../sorting/bubble'
 
 chai.should()
@@ -8,20 +9,20 @@ describe('[Sorting] Bubble', () => {
     // Assertions.
     bubbleSort([1]).should.deep.equal([1])
     bubbleSort([1, -10]).should.deep.equal([-10, 1])
-    bubbleSort([7, 5, 2, 4, 3, 9]).should.deep.equal([2, 3, 4, 5, 7, 9])
-    bubbleSort([9, 7, 5, 4, 3, 1]).should.deep.equal([1, 3, 4, 5, 7, 9])
-    bubbleSort([1, 2, 3, 4, 5, 6]).should.deep.equal([1, 2, 3, 4, 5, 6])
+    bubbleSort(fixture1().unsorted).should.deep.equal(fixture1().sorted)
+    bubbleSort(fixture2().unsorted).should.deep.equal(fixture2().sorted)
+    bubbleSort(fixture3().unsorted).should.deep.equal(fixture3().sorted)
 
     done()
   })
 
   it('bubbleSortRecursive([...])', (done) => {
     // Assertions.
-    bubbleSort([1], 1).should.deep.equal([1])
-    bubbleSort([1, -10], 2).should.deep.equal([-10, 1])
-    bubbleSortRecursive([7, 5, 2, 4, 3, 9], 5).should.deep.equal([2, 3, 4, 5, 7, 9])
-    bubbleSortRecursive([9, 7, 5, 4, 3, 1], 6).should.deep.equal([1, 3, 4, 5, 7, 9])
-    bubbleSortRecursive([1, 2, 3, 4, 5, 6], 6).should.deep.equal([1, 2, 3, 4, 5, 6])
+    bubbleSortRecursive(fixture1().unsorted, 10).should.deep.equal(fixture1().sorted)
+    bubbleSortRecursive(fixture2().unsorted, 12).should.deep.equal(fixture2().sorted)
+    bubbleSortRecursive(fixture3().unsorted, 2).should.deep.equal(fixture3().sorted)
+    bubbleSortRecursive(fixture4().unsorted, 1).should.deep.equal(fixture4().sorted)
+    bubbleSortRecursive(fixture5().unsorted, 2).should.deep.equal(fixture5().sorted)
 
     done()
   })

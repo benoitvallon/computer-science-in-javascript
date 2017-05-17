@@ -7,9 +7,9 @@ chai.should()
 describe('[Sorting] Insertion', () => {
   it('insertionSort([...])', (done) => {
     // Assertions.
-    insertionSort(fixture1.unsorted).should.deep.equal(fixture1.sorted)
-    insertionSort(fixture2.unsorted).should.deep.equal(fixture2.sorted)
-    insertionSort(fixture3.unsorted).should.deep.equal(fixture3.sorted)
+    insertionSort(fixture1().unsorted).should.deep.equal(fixture1().sorted)
+    insertionSort(fixture2().unsorted).should.deep.equal(fixture2().sorted)
+    insertionSort(fixture3().unsorted).should.deep.equal(fixture3().sorted)
 
     done()
   })
