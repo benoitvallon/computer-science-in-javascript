@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions, no-console */
 import chai from 'chai'
-import HashTableDS from '../../data-structures/hash-table'
+import HashTableDS from '../../src/data-structures/hash-table'
 
 chai.should()
 const expect = chai.expect

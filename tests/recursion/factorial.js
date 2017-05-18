@@ -1,5 +1,5 @@
 import chai from 'chai'
-import { factorial, addition } from '../../recursion/math'
+import { factorial, addition } from '../../src/recursion/math'
 
 chai.should()
 

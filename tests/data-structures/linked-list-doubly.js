@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions, no-console */
 import chai from 'chai'
-import DoublyLinkedListDS from '../../data-structures/linked-list-doubly'
+import DoublyLinkedListDS from '../../src/data-structures/linked-list-doubly'
 
 chai.should()
 

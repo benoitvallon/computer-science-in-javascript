@@ -1,5 +1,5 @@
 import chai from 'chai'
-import { mergeSort, merge } from '../../sorting/merge'
+import { mergeSort, merge } from '../../src/sorting/merge'
 import { fixture1, fixture2, fixture3, merge1, merge2, merge3 } from '../fixtures/sorting'
 
 chai.should()

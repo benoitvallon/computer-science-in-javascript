@@ -1,5 +1,5 @@
 import chai from 'chai'
-// import { factorial, addition } from '../../recursion/exercises'
+// import { factorial, addition } from '../../src/recursion/exercises'
 
 chai.should()
 

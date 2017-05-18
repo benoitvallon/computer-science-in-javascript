@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import chai from 'chai'
-import TreeDS from '../../data-structures/tree'
+import TreeDS from '../../src/data-structures/tree'
 import { fullFixture, removedCtoFixture, removedCfoFixture } from '../fixtures/tree'
 
 chai.should()

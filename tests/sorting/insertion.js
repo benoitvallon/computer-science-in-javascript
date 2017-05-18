@@ -1,5 +1,5 @@
 import chai from 'chai'
-import { insertionSort } from '../../sorting/insertion'
+import { insertionSort } from '../../src/sorting/insertion'
 import { fixture1, fixture2, fixture3 } from '../fixtures/sorting'
 
 chai.should()

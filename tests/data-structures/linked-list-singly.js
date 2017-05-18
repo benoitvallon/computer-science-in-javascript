@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions, no-console */
 import chai from 'chai'
-import SinglyLinkedListDS from '../../data-structures/linked-list-singly'
+import SinglyLinkedListDS from '../../src/data-structures/linked-list-singly'
 
 chai.should()
 const expect = chai.expect
