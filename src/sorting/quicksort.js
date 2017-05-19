@@ -3,11 +3,32 @@
 // http://www.stoimen.com/blog/2012/03/12/algorithm-cheatsheet-quicksort/
 // http://www.stoimen.com/blog/2010/06/11/friday-algorithms-quicksort-difference-between-php-and-javascript/
 
-export const quickSort = (arr, left, right) => {
+// var a = [2,4,5,63,4,5,63,2,4,43];
+
+export function quickSort (arr) {
+  if (arr.length === 0) {
+    return []
+  }
+
+  const left = []
+  const right = []
+  const pivot = arr[0]
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i])
+    } else {
+      right.push(arr[i])
+    }
+  }
+
+  return quickSort(left).concat(pivot, quickSort(right))
+}
+
+export const quickSort1 = (arr, left, right) => {
   // let len = arr.length
   let pivot
   let partitionIndex
-
 
   if (left < right) {
     pivot = right
@@ -30,7 +51,9 @@ export const partition = (arr, pivot, left, right) => {
       partitionIndex++
     }
   }
+
   swap(arr, right, partitionIndex)
+
   return partitionIndex
 }
 

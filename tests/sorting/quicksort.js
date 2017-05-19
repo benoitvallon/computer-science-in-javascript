@@ -1,13 +1,15 @@
+/* eslint-disable no-console */
 import chai from 'chai'
-// import { quickSort, partition } from '../../sorting/merge'
-// import { fixture1 } from '../fixtures/sorting'
+import { quickSort } from '../../src/sorting/quicksort'
+import { fixture1 } from '../fixtures/sorting'
 
 chai.should()
 
 describe('[Sorting] Quick Sort!', () => {
   it('quickSort([...])', (done) => {
     // Assertions.
-    // console.log(fixture1().unsorted)
+    console.log('quickSort(fixture1())', quickSort(fixture1().unsorted))
+    // .should.deep.equal(fixture1().sorted)
 
     done()
   })
