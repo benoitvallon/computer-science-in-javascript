@@ -60,28 +60,33 @@ export const mergeSort = (arr) => {
 /**
  * The actual merging.
  *
+ * Once you get past the recursion this is actually pretty simple.
+ *
+ * 1. Setup some variables that we'll be using to build the sorted array.
+ * 2. We will loop through as long as each array has values left in BOTH.
+ * 3. In our comparison we see if left or right is less. If left is less we'll
+ *    put first into our result array otherwise place the right.
+ * 4. After our loop we'll finish by concating any leftovers.
+ *
  * @param {array} left Left array.
  * @param {array} right Right array.
  * @return {array}
  */
 export const merge = (left, right) => {
   const result = []
+  let l = 0
+  let r = 0
 
-  while (left.length && right.length) {
-    if (left[0] <= right[0]) {
-      result.push(left.shift())
+  while (l < left.length && r < right.length) {
+    if (left[l] < right[r]) {
+      result.push(left[l++])
     } else {
-      result.push(right.shift())
+      result.push(right[r++])
     }
   }
 
-  while (left.length) {
-    result.push(left.shift())
-  }
-
-  while (right.length) {
-    result.push(right.shift())
-  }
-
+  // Remaining part needs to be addred to the result.
   return result
+    .concat(left.slice(l))
+    .concat(right.slice(r))
 }
