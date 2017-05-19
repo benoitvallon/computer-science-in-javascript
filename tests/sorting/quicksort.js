@@ -18,4 +18,11 @@ describe('[Sorting] Quick Sort!', () => {
 
     done()
   })
+
+  it('swap([...])', (done) => {
+    // Assertions.
+    // console.log(fixture1().unsorted)
+
+    done()
+  })
 })
