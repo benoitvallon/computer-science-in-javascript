@@ -1,3 +1,14 @@
+**NOTE**: Project assumes you have `node` and `npm/yarn` installed. If not go ahead and do that now.
+
+This is important as this is what I use so that I don't need to keep typing `../../`
+
+https://github.com/yudhasetiawan/babel-plugin-namespace
+
+* https://github.com/Olical/tuple => https://oli.me.uk/2013/07/12/tuples-in-javascript/
+* https://gist.github.com/samwize/8877226
+
+Everything is done via tests. It should be noted, though, that not all possible paths are tested in this repo. Just "enough" for each function so that the theory can be learned.
+
 # Computer Science in JavaScript (ES5 and ES6)
 
 This repository contains code about various series of posts that I made [on my blog](http://blog.benoitvallon.com) about computer science (mostly data structures and sorting algorithms) reimplemented in JavaScript.
@@ -54,8 +65,4 @@ Unlike the [data structures](http://blog.benoitvallon.com/data-structures-in-jav
 
 By doing so we will be able to compare the different sorting algorithms more easily. Sorting algorithms are very sensitive to the input data so we will also try different input data to see how they affect the performances.
 
-## Why this repository?
-
-At the beginning I started those series with 2 different repositories, one for the data structures and another one for the sorting algorithms. It was nice to keep things separately at first but grouping them into the same repository makes more sense to me now.
-
-All computer science concepts are located at the same place and it will allow me to add even more things in the future. Moreover, it won’t be mandatory that those things will be about data structures or sorting algorithms. There are other important things to know too.
+https://github.com/eyas-ranjous/datastructures-js
