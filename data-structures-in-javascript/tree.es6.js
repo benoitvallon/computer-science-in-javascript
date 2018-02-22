@@ -30,18 +30,18 @@ class Tree {
     const queue = [this.root];
     while(queue.length) {
       const node = queue.shift();
-      for(let i = 0; i < node.children.length; i++) {
-        if(node.children[i].data === data) {
-          node.children.splice(i, 1);
+      for (let [index, child] of node.children.entries()) {
+        if(child.data === data) {
+          node.children.splice(index, 1);
         } else {
-          queue.push(node.children[i]);
+          queue.push(child);
         }
       }
     }
   }
 
   contains(data) {
-    return this.findBFS(data) ? true : false;
+    return !!this.findBFS(data);
   }
 
   findBFS(data) {
@@ -51,8 +51,8 @@ class Tree {
       if(node.data === data) {
         return node;
       }
-      for(let i = 0; i < node.children.length; i++) {
-        queue.push(node.children[i]);
+      for(const child of node.children) {
+        queue.push(child);
       }
     }
     return null;
@@ -63,16 +63,16 @@ class Tree {
       if(fn) {
         fn(node);
       }
-      for(let i = 0; i < node.children.length; i++) {
-        this._preOrder(node.children[i], fn);
+      for(const child of node.children) {
+        this._preOrder(child, fn);
       }
     }
   }
 
   _postOrder(node, fn) {
     if(node) {
-      for(let i = 0; i < node.children.length; i++) {
-        this._postOrder(node.children[i], fn);
+      for(const child of node.children) {
+        this._postOrder(child, fn);
       }
       if(fn) {
         fn(node);
@@ -96,8 +96,8 @@ class Tree {
       if(fn) {
         fn(node);
       }
-      for(let i = 0; i < node.children.length; i++) {
-        queue.push(node.children[i]);
+      for(const child of node.children) {
+        queue.push(child);
       }
     }
   }
@@ -115,8 +115,8 @@ class Tree {
       if(node === newline && queue.length) {
         queue.push(newline);
       }
-      for(let i = 0; i < node.children.length; i++) {
-        queue.push(node.children[i]);
+      for(const child of node.children) {
+        queue.push(child);
       }
     }
     console.log(string.slice(0, -2).trim());
@@ -135,8 +135,8 @@ class Tree {
       if(node === newline && queue.length) {
         queue.push(newline);
       }
-      for(let i = 0; i < node.children.length; i++) {
-        queue.push(node.children[i]);
+      for(const child of node.children) {
+        queue.push(child);
       }
     }
     console.log(string.trim());
