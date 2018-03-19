@@ -6,94 +6,103 @@ function Node(data) {
 
 class DoublyLinkedList {
   constructor() {
-    this.head = null;
-    this.tail = null;
+    const dummyNode = new Node(undefined);
+    dummyNode.next = dummyNode;
+    dummyNode.previous = dummyNode;
+    this.dummy = dummyNode;
     this.numberOfValues = 0;
   }
 
-  add(data) {
-    const node = new Node(data);
-    if(!this.head) {
-      this.head = node;
-      this.tail = node;
-    } else {
-      node.previous = this.tail;
-      this.tail.next = node;
-      this.tail = node;
+ /* this should be a private method */
+ getNode(i){
+    let node = undefined;
+    if(i < Math.floor(this.numberOfValues/2)){
+       node = this.dummy.next;
+       for(let j = 0; j < i; j++){
+           node = node.next;
+       }
+    } else{
+        node = this.dummy;
+        for(let j = this.numberOfValues; j > i; j--){
+            node = node.previous;
+        }
     }
+    return node;
+ }
+
+ /* gets a values within the range of 0 > i >= n */
+ get(i){
+    if(0 > i || i >= this.numberOfValues) return undefined;
+    return this.getNode(i).data;
+ }
+
+ /* sets a value withing the range 0 > i >= n */
+ set(i,x){
+    if(0 > i || i >= this.numberOfValues) return undefined;
+    let node = getNode(i);
+    let temp = node.data;
+    node.data = x;
+    return temp;
+ }
+
+ /* this should be a private method*/
+  addBefore(node,x) {
+    const toAdd = new Node(x);
+
+    toAdd.previous = node.previous;
+    toAdd.next     = node;
+
+    
+    toAdd.next.previous = toAdd;
+    toAdd.previous.next = toAdd;
+    
     this.numberOfValues++;
+
+    return toAdd;
   }
 
-  remove(data) {
-    let current = this.head;
-    while(current) {
-      if(current.data === data) {
-        if(current === this.head && current === this.tail) {
-          this.head = null;
-          this.tail = null;
-        } else if(current === this.head) {
-          this.head = this.head.next;
-          this.head.previous = null;
-        } else if(current === this.tail) {
-          this.tail = this.tail.previous;
-          this.tail.next = null;
-        } else {
-          current.previous.next = current.next;
-          current.next.previous = current.previous;
-        }
-        this.numberOfValues--;
-      }
-      current = current.next;
-    }
+  /* adds a node at i within the range of 0 > i > n */
+  add(i,x){
+    if(0 > i || i > this.numberOfValues) return;
+    this.addBefore(this.getNode(i),x);
   }
 
-  insertAfter(data, toNodeData) {
-    let current = this.head;
-    while(current) {
-      if(current.data === toNodeData) {
-        const node = new Node(data);
-        if(current === this.tail) {
-          this.add(data);
-        } else {
-          current.next.previous = node;
-          node.previous = current;
-          node.next = current.next;
-          current.next = node;
-          this.numberOfValues++;
-        }
-      }
-      current = current.next;
-    }
+  /* this should be a private method */
+  removeNode(x){
+    x.previous.next = x.next;
+    x.next.previous = x.previous;
+    this.numberOfValues--;
   }
 
-  traverse(fn) {
-    let current = this.head;
-    while(current) {
+  /* remeoves a node within the range of 0 > i >= n */
+  remove(i){
+    if(0 > i || i >= this.numberOfValues) return undefined;
+    let node = this.getNode(i);
+    this.removeNode(node);
+    return node.data;
+  }
+
+  /* apply a function to the entire data set */
+  map(fn) {
+    let current = this.dummy.next;
+    for(let i = 0; i < this.numberOfValues; i++){
       if(fn) {
-        fn(current);
+        current.data = fn(current.data);
       }
       current = current.next;
     }
   }
 
-  traverseReverse(fn) {
-    let current = this.tail;
-    while(current) {
-      if(fn) {
-        fn(current);
-      }
-      current = current.previous;
-    }
-  }
-
+  /* returns the size of the list */
   length() {
     return this.numberOfValues;
   }
 
+  /* prints out the list */
   print() {
     let string = '';
-    let current = this.head;
-    while(current) {
+    let current = this.dummy.next;
+    for(let i = 0; i < this.numberOfValues; i++){
       string += `${current.data} `;
       current = current.next;
     }
@@ -101,7 +110,37 @@ class DoublyLinkedList {
   }
 }
 
+/* tester data */
+
 const doublyLinkedList = new DoublyLinkedList();
+
+doublyLinkedList.print(); // => ''
+for(let i = 0; i < 10; i++){
+    doublyLinkedList.add(doublyLinkedList.length(),i);
+}
+doublyLinkedList.map(function(val){return 10*val;});
+doublyLinkedList.print(); //=> 0 10 20 30 40 50 60 70 80 90
+
+for(let i = 0; i < doublyLinkedList.length();i++){
+    console.log(doublyLinkedList.get(i)); //=> 0\n10\n20\n30\n40\n50\n60\n70\n80\n90\n
+}
+doublyLinkedList.remove(0);
+doublyLinkedList.remove(doublyLinkedList.length()-1);
+doublyLinkedList.print(); // => 10 20 30 40 50 60 70 80
+console.log(doublyLinkedList.length()); // => 8
+
+/* these line should all print out undefined */
+console.log(doublyLinkedList.get(-1));
+console.log(doublyLinkedList.get(doublyLinkedList.length()));
+console.log(doublyLinkedList.set(-1,10));
+console.log(doublyLinkedList.set(doublyLinkedList.length(),10));
+console.log(doublyLinkedList.add(-1,10));
+console.log(doublyLinkedList.add(doublyLinkedList.length() + 1,10));
+doublyLinkedList.print(); // => 10 20 30 40 50 60 70 80
+doublyLinkedList.add(0,-10);
+doublyLinkedList.print(); // => -10 10 20 30 40 50 60 70 80
+
+/*
 doublyLinkedList.print(); // => ''
 doublyLinkedList.add(1);
 doublyLinkedList.add(2);
@@ -144,3 +183,4 @@ console.log('length is 7:', doublyLinkedList.length()); // => 7
 doublyLinkedList.traverseReverse(node => { console.log(node.data); }); // => 18 17 16 15 14 13 12
 doublyLinkedList.print(); // => 12 13 14 15 16 17 18
 console.log('length is 7:', doublyLinkedList.length()); // => 7
+*/
