@@ -11,14 +11,13 @@ class Tree {
   add(data, toNodeData) {
     const node = new Node(data);
     const parent = toNodeData ? this.findBFS(toNodeData) : null;
-    if(parent) {
+    if (parent) {
       parent.children.push(node);
     } else {
-      if(!this.root) {
-        this.root = node;
-      } else {
-        return 'Root node is already assigned';
+      if (this.root) {
+        throw new Error('Root node is already assigned');
       }
+      this.root = node;
     }
   }
 
@@ -31,7 +30,7 @@ class Tree {
     while(queue.length) {
       const node = queue.shift();
       for (let [index, child] of node.children.entries()) {
-        if(child.data === data) {
+        if (child.data === data) {
           node.children.splice(index, 1);
         } else {
           queue.push(child);
@@ -48,10 +47,10 @@ class Tree {
     const queue = [this.root];
     while(queue.length) {
       const node = queue.shift();
-      if(node.data === data) {
+      if (node.data === data) {
         return node;
       }
-      for(const child of node.children) {
+      for (const child of node.children) {
         queue.push(child);
       }
     }
@@ -59,8 +58,8 @@ class Tree {
   }
 
   _preOrder(node, fn) {
-    if(node) {
-      if(fn) {
+    if (node) {
+      if (fn) {
         fn(node);
       }
       for(const child of node.children) {
@@ -70,11 +69,11 @@ class Tree {
   }
 
   _postOrder(node, fn) {
-    if(node) {
-      for(const child of node.children) {
+    if (node) {
+      for (const child of node.children) {
         this._postOrder(child, fn);
       }
-      if(fn) {
+      if (fn) {
         fn(node);
       }
     }
@@ -82,7 +81,7 @@ class Tree {
 
   traverseDFS(fn, method) {
     const current = this.root;
-    if(method) {
+    if (method) {
       this[`_${method}`](current, fn);
     } else {
       this._preOrder(current, fn);
@@ -91,31 +90,31 @@ class Tree {
 
   traverseBFS(fn) {
     const queue = [this.root];
-    while(queue.length) {
+    while (queue.length) {
       const node = queue.shift();
-      if(fn) {
+      if (fn) {
         fn(node);
       }
-      for(const child of node.children) {
+      for (const child of node.children) {
         queue.push(child);
       }
     }
   }
 
   print() {
-    if(!this.root) {
+    if (!this.root) {
       return console.log('No root node found');
     }
     const newline = new Node('|');
     const queue = [this.root, newline];
     let string = '';
-    while(queue.length) {
+    while (queue.length) {
       const node = queue.shift();
       string += `${node.data.toString()} `;
-      if(node === newline && queue.length) {
+      if (node === newline && queue.length) {
         queue.push(newline);
       }
-      for(const child of node.children) {
+      for (const child of node.children) {
         queue.push(child);
       }
     }
