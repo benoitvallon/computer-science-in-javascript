@@ -14,7 +14,6 @@ class Node {
 class PriorityQueue {
     constructor() {
         this.queue = [];
-        this.size = 0;
     }
 
     /**
@@ -34,7 +33,20 @@ class PriorityQueue {
         // creating new node and inserts data
         let newNode = new Node(data, priority);
         this.queue.splice(index, 0, newNode);
-        this.size++;
+    }
+
+    /**
+     * @description It removes the data of highest priority
+     */
+    remove() {
+        return this.queue.shift();
+    }
+
+    /**
+     * @description It returns the length of the queue
+     */
+    length() {
+        return this.queue.length;
     }
 
 
@@ -55,6 +67,13 @@ class PriorityQueue {
 let pQueue = new PriorityQueue();
 pQueue.insert(12, 5);
 pQueue.insert(55, 2);
+console.log(pQueue.length());
 pQueue.insert(23, 5);
 pQueue.insert(134, 8);
+pQueue.print();
+console.log(pQueue.remove());
+console.log(pQueue.length());
+console.log(pQueue.remove());
+console.log(pQueue.length());
+pQueue.insert(194, 11);
 pQueue.print();
