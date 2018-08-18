@@ -49,6 +49,22 @@ class PriorityQueue {
         return this.queue.length;
     }
 
+    /**
+     * @description It checks if the queue is empty
+     */
+    isEmpty() {
+        return this.queue.length === 0;
+    }
+
+    /**
+     * @description It iterates over the elements of queue
+     * @param {*} fn 
+     */
+    iterator(fn) {
+        for (let node of this.queue) {
+            fn(node);
+        }
+    }
 
     /**
      * @description It prints the queue
@@ -65,7 +81,9 @@ class PriorityQueue {
 
 
 let pQueue = new PriorityQueue();
+console.log(pQueue.isEmpty());
 pQueue.insert(12, 5);
+console.log(pQueue.isEmpty());
 pQueue.insert(55, 2);
 console.log(pQueue.length());
 pQueue.insert(23, 5);
@@ -77,3 +95,8 @@ console.log(pQueue.remove());
 console.log(pQueue.length());
 pQueue.insert(194, 11);
 pQueue.print();
+console.log(pQueue.iterator);
+
+pQueue.iterator(item => {
+    console.log(item);
+});
