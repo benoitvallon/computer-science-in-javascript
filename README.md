@@ -56,6 +56,6 @@ By doing so we will be able to compare the different sorting algorithms more eas
 
 ## Why this repository?
 
-At the beginning I started those series with 2 different repositories, one for the data structures and another one for the sorting algorithms. It was nice to keep things separately at first but grouping them into the same repository makes more sense to me now.
+At the beginning I started those series with 2 different repositories, one for the data structures and another one for the [sorting algorithms](https://www.interviewbit.com/courses/programming/arrays/sorting-algorithms/). It was nice to keep things separately at first but grouping them into the same repository makes more sense to me now.
 
 All computer science concepts are located at the same place and it will allow me to add even more things in the future. Moreover, it won’t be mandatory that those things will be about data structures or sorting algorithms. There are other important things to know too.
