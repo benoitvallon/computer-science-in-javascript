@@ -1,5 +1,5 @@
 // array to sort
-var array = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8];
+let array = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8];
 
 // basic implementation (pivot is the first element of the array)
 function quicksortBasic(array) {
@@ -7,11 +7,11 @@ function quicksortBasic(array) {
     return array;
   }
 
-  var pivot = array[0];
-  var lesser = [];
-  var greater = [];
+  let pivot = array[0];
+  let lesser = [];
+  let greater = [];
 
-  for(var i = 1; i < array.length; i++) {
+  for(let i = 1; i < array.length; i++) {
     if(array[i] < pivot) {
       lesser.push(array[i]);
     } else {
@@ -26,7 +26,7 @@ console.log(quicksortBasic(array.slice())); // => [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 1
 
 // swap function helper
 function swap(array, i, j) {
-  var temp = array[i];
+  let temp = array[i];
   array[i] = array[j];
   array[j] = temp;
 }
@@ -37,7 +37,7 @@ function quicksort(array, left, right) {
   right = right || array.length - 1;
 
   // var pivot = partitionLomuto(array, left, right); // you can play with both partition
-  var pivot = partitionHoare(array, left, right); // you can play with both partition
+  let pivot = partitionHoare(array, left, right); // you can play with both partition
 
   if(left < pivot - 1) {
     quicksort(array, left, pivot - 1);
@@ -49,10 +49,10 @@ function quicksort(array, left, right) {
 }
 // Lomuto partition scheme, it is less efficient than the Hoare partition scheme
 function partitionLomuto(array, left, right) {
-  var pivot = right;
-  var i = left;
+  let pivot = right;
+  let i = left;
 
-  for(var j = left; j < right; j++) {
+  for(let j = left; j < right; j++) {
     if(array[j] <= array[pivot]) {
       swap(array, i, j);
       i = i + 1;
@@ -63,7 +63,7 @@ function partitionLomuto(array, left, right) {
 }
 // Hoare partition scheme, it is more efficient than the Lomuto partition scheme because it does three times fewer swaps on average
 function partitionHoare(array, left, right) {
-  var pivot = Math.floor((left + right) / 2 );
+  let pivot = Math.floor((left + right) / 2 );
 
   while(left <= right) {
     while(array[left] < array[pivot]) {
