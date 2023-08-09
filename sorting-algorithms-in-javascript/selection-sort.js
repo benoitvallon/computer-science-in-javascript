@@ -1,17 +1,17 @@
 // array to sort
-var array = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8];
+let array = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8];
 
 // swap function helper
 function swap(array, i, j) {
-  var temp = array[i];
+  let temp = array[i];
   array[i] = array[j];
   array[j] = temp;
 }
 
 function selectionSort(array) {
-  for(var i = 0; i < array.length; i++) {
-    var min = i;
-    for(var j = i + 1; j < array.length; j++) {
+  for(let i = 0; i < array.length; i++) {
+    let min = i;
+    for(let j = i + 1; j < array.length; j++) {
       if(array[j] < array[min]) {
         min = j;
       }
